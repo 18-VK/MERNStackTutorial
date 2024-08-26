@@ -1,0 +1,36 @@
+Prototype in js
+----------------
+JavaScript is a prototype based language, so, whenever we create a function using JavaScript, JavaScript engine adds a prototype
+property inside a function, Prototype property is basically an object (also known as Prototype object), where we can attach 
+methods and properties in a prototype object, which enables all the other objects to inherit these methods and properties.
+
+In JavaScript, prototypes allow properties and methods to be shared among instances of the function or object.
+
+Introduction
+--------------
+Have you ever wondered how strings, arrays or objects “know” the methods each of them have? How does a string know it can 
+.toUpperCase() or an array know that it can .sort()? We never defined these methods manually, right?
+
+The answer is that these methods come built-in within each type of data structure thanks to something called prototype 
+inheritance.
+
+In JavaScript, an object can inherit properties of another object. The object from where the properties are inherited is
+called the prototype. In short, objects can inherit properties from other objects — the prototypes.
+
+When we try to access a property of an object, the property is not only searched in the object itself. It's also searched 
+in the prototype of the object, in the prototype of the prototype, and so on – until a property is found that matches the name
+or the end of the prototype chain is reached.
+
+If the property or method isn’t found anywhere in the prototype chain, only then will JavaScript return undefined.
+
+
+Classes in js
+--------------
+
+In JavaScript, Classes define blueprints for creating objects with similar properties and methods. They offer a more
+structured approach to object-oriented programming.
+
+Classes are similar to functions. Here, a class keyword is used instead of a function keyword. Unlike functions classes in JavaScript are not hoisted. 
+The constructor method is used to initialize. The class name is user-defined.
+
+

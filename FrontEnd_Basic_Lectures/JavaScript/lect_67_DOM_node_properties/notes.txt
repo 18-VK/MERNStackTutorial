@@ -1,0 +1,16 @@
+DOM Node properties
+--------------------
+
+Property	       Description
+>attributes	       This read-only property returns a named node mapNamedNodeMap containing the specified node's attributes.
+>childNodes	       This read-only property returns a node list containing all the children of the specified node.
+>firstChild	       This read-only property returns the first child node of the specified node.
+>lastChild	       This read-only property returns the last child node of the specified node.
+>nextSibling       This read-only property returns the next sibling of the specified node.
+>nodeName	       This read-only property returns a string containing the name of the node, which is typically the name of the element (P, DIV, TABLE, and so on).
+>nodeType	       This read-only property returns a number corresponding to the node type (1 = element, 2 = text).
+>nodeValue	       This property returns a string containing the contents of the node and is only valid for text nodes.
+>ownerDocument     This read-only property returns the root document node object of the specified node.
+>parentNode	       This read-only property returns the parent node of the specified ...
+
+

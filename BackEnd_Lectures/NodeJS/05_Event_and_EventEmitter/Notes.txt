@@ -1,0 +1,20 @@
+In Node.js, the events module provides a way to handle asynchronous events. The core of the events module is the 
+EventEmitter class, which allows you to create and manage event-driven architectures. Event emitters facilitate
+communication between different parts of your application by allowing one part to emit an event and another part 
+to listen for and respond to that event.
+
+meaning of emit : to send out something, for example, a smell, a sound, smoke, heat or light
+
+Basic Concepts
+--------------
+> EventEmitter Class: This class is used to create and handle custom events.
+> Emitting Events: You can emit an event using the emit method.
+> Listening to Events: You can listen for an event using the on method.
+
+Conclusion : 
+Event emitters in Node.js provide a powerful way to handle asynchronous events, making your code more modular and easier
+to manage. They are extensively used in Node.js, including in core modules such as HTTP, Streams, and File System (fs).
+
+Event arguments
+---------------
+while rasing event we can also pass some data to listener using event arguments

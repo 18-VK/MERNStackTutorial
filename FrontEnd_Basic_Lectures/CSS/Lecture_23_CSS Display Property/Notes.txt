@@ -1,0 +1,4 @@
+CSS Display
+    This property specifies and determines how an element would be displayed on the website. 
+    By tweaking the value of the display we can show the content “inline”, “grid”, “flex”, and whatnot.
+NOTE - we will see Flex and Grid furthur

@@ -1,0 +1,20 @@
+Specificity - https://www.codewithharry.com/tutorial/css-specificity/
+    CSS Specificity helps determine what style will be applied to the HTML element(s) when there are overlapping or multiple CSS rules.
+    It is a value or weight assigned to a CSS selector. The higher the specificity, the more precedence the selector has.
+
+So, the order of specificity is:
+    Inline Style > ID Selector > Class or Attribute Selector > Element Selector > Universal Selector
+    Note - Only "!important" can override the inline Style
+
+
+            div > button
+        {
+            border-radius: 1em;
+            border: 2px  rgba(0, 0, 255, 0.244);
+            /* margin: 40%;
+            padding: 10px; */
+            background-color: rgba(0, 140, 255, 0.452);
+            color: rgba(0, 0, 255, 0.612);
+            font-weight: bolder;
+            text-align: center; 
+        }

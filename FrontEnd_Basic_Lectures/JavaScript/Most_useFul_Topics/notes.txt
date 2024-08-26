@@ -1,0 +1,52 @@
+Filter function
+---------------
+The filter function in JavaScript is used to filter out elements from an array based on a certain condition. In other words,
+the filter function will return a new array with only those elements that satisfy the condition.
+Syntax : - 
+array.filter(callback(element, index, arr), thisValue)
+
+Map function
+-------------
+The map() method of Array instances creates a new array populated with the results of calling a provided function on
+every element in the calling array.
+
+map() creates a new array from calling a function for every array element.
+map() does not execute the function for empty elements.
+map() does not change the original array.
+
+The JavaScript Array concat() 
+-----------------------------
+Method is used to merge two or more arrays together. This method does not alter the original arrays passed as arguments but 
+instead, returns a new Array.
+
+The Javascript arr.reduce()
+----------------------------
+method in JavaScript is used to reduce the array to a single value and executes a provided function
+for each value of the array (from left to right) and the return value of the function is stored in an accumulator. 
+
+JavaScript Array splice()
+-------------------------
+Method is an inbuilt method in JavaScript that is used to change the contents of an array by removing
+or replacing existing elements and/or adding new elements. It modifies the original array and returns an array of the removed 
+elements.
+
+The Array slice() 
+------------------
+method in JavaScript returns selected elements from an array, creating a new array. It selects elements 
+from a specified start index up to, but not including, a specified end index. The original array remains unchanged.
+
+The JavaScript push()
+----------------------
+method adds one or more elements to the end of an array and returns the new length of the array.
+It modifies the original array and accepts one or more arguments representing the elements to add.
+
+JavaScript Array pop()
+-----------------------
+Method is used to remove the last element of the array and also returns the 
+removed element. This function decreases the length of the array.
+
+JavaScript Symbol
+------------------
+The JavaScript ES6 introduced a new primitive data type called Symbol. Symbols are immutable (cannot be changed) and are unique
+
+

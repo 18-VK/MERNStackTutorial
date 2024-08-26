@@ -1,0 +1,22 @@
+- Front End 
+	> HTML - Tables, tags, div, forms, apis
+	> CSS - Flex, margin, padding, Media queries
+	> Javascript - Functions, loops, OOPS, Closures, event loops, Promises
+	> React.js (for some extra next.js) - State Management, Components System, Hooks, Next JS
+
+- Back end
+	> Node.js - NPM, Modules
+	> Express.js - MVC Architecture, CRUD Operations, Middlewares
+	> for database(Mongo DB) - Basics of Databases, Mongoose, Query
+	> Networking advance(Sockets, authentication)
+
+- PROJECTS - Atleast one project- Frontend, Backend
+	> Ecommerce Project
+	> Social Media Project
+	> OTT Platform Project
+	> Personal Portfolio Project
+- DEPLOYMENTS
+	> AWS
+	> Azure
+	> GCP
+	> Vercel

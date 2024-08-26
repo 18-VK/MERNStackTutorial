@@ -1,0 +1,62 @@
+Check out this - https://www.w3schools.com/css/css_selectors.asp
+We can divide CSS selectors into five categories:
+
+> Simple selectors (select elements based on name, id, class)
+> Combinator selectors (select elements based on a specific relationship between them)
+> Pseudo-class selectors (select elements based on a certain state)
+> Pseudo-elements selectors (select and style a part of an element)
+> Attribute selectors (select elements based on an attribute or attribute value)
+
+link for attribute selector - https://www.w3schools.com/css/css_attribute_selectors.asp
+
+Adjacent Sibling Selector (+)
+------------------------------
+The adjacent sibling selector is used to select an element that is directly after another specific element.
+Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+The following example selects the first <p> element that are placed immediately after <div> elements:
+
+General Sibling Selector (~)
+----------------------------
+The general sibling selector selects all elements that are next siblings of a specified element.
+The following example selects all <p> elements that are next siblings of <div> elements: 
+
+div ~ p {
+  background-color: yellow;
+}
+
+Pseudo-Elements selector
+------------------------
+A CSS pseudo-element is used to style specified parts of an element.
+For example, it can be used to:
+
+> Style the first letter, or line, of an element
+> Insert content before, or after, the content of an element
+
+CSS - The ::before Pseudo-element
+----------------------------------
+The ::before pseudo-element can be used to insert some content before the content of an element.    
+The following example inserts an image before the content of each <h1> element:
+
+h1::before {
+  content: url(smiley.gif);
+}
+
+CSS - The ::after Pseudo-element
+----------------------------------
+The ::after pseudo-element can be used to insert some content after the content of an element.
+The following example inserts an image after the content of each <h1> element:
+
+h1::after {
+  content: url(smiley.gif);
+}
+
+CSS - The ::selection Pseudo-element
+------------------------------------
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+The following CSS properties can be applied to ::selection: color, background, cursor, and outline.
+The following example makes the selected text red on a yellow background:
+
+::selection {
+  color: red;
+  background: yellow;
+}

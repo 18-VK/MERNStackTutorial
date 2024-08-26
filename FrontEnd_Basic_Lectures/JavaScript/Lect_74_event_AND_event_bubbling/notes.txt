@@ -1,0 +1,129 @@
+JavaScript Events
+--------------------
+JavaScript Events are actions or occurrences that happen in the browser. They can be triggered by various user interactions or by the browser itself.
+Common events include mouse clicks, keyboard presses, page loads, and form submissions. Event handlers are JavaScript functions that 
+respond to these events, allowing developers to create interactive web applications.
+
+To react to an event, you attach an event handler to it. This is a block of code that runs when the event fires. 
+When such a block of code is defined to run in response to an event,we say we are registering an event handler. 
+Note: Event handlers are sometimes called event listeners.
+
+syntax:
+       <button type="button" 
+            onclick="hiThere()">
+            Click me event
+    </button>
+Here on button click, a function 'hiThere()' will call.
+
+or 
+
+const btn = document.querySelector("button");
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+btn.addEventListener("click", () => {
+  const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
+});
+
+link - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
+Common JavaScript Events
+> onclick: Triggered when an element is clicked.
+> onmouseover: Fired when the mouse pointer moves over an element.
+> onmouseout: Occurs when the mouse pointer leaves an element.
+> onkeydown: Fired when a key is pressed down.
+> onkeyup: Fired when a key is released.
+> onchange: Triggered when the value of an input element changes.
+> onload: Occurs when a page has finished loading.
+> onsubmit: Fired when a form is submitted.
+> onfocus: Occurs when an element gets focus.
+> onblur: Fired when an element loses focus.
+
+The event object
+-----------------
+An event object refers to the argument sent into an event handler function.
+
+An event object simply represents an event. It contains contextual information regarding the event that caused a given handler to be invoked.
+Sometimes, inside an event handler function, you'll see a parameter specified with a name such as event, evt, or e. This is called 
+the event object, and it is automatically passed to event handlers to provide extra features and information. For example,\
+let's rewrite our random color example again slightly:
+The addEventListener() 
+------------------------
+method attaches an event handler to an element without overwriting existing event handlers.
+You can add many event handlers to one element.
+You can add many event handlers of the same type to one element, i.e two "click" events.
+
+Note - The addEventListener() method makes it easier to control how the event reacts to bubbling.
+
+Syntax : 
+element.addEventListener(event, function, useCapture);
+The first parameter is the type of the event (like "click" or "mousedown" or any other HTML DOM Event.)
+The second parameter is the function we want to call when the event occurs.
+The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.
+
+
+Event Bubbling or Event Capturing?
+-----------------------------------
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element,
+and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first,
+then the <div> element's click event.
+
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled 
+first, then the <p> element's click event.
+
+With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+addEventListener(event, function, useCapture);
+
+The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing 
+propagation.
+
+Event bubbling 
+----------------
+describes how the browser handles events targeted at nested elements.
+
+for e.g 
+
+   <div class="outermost">
+        <div class="middle">
+            <div class="innermost">
+                Innermost elements 
+            </div>
+        </div>
+    </div>
+Here, there are 3 nested element and a event on each..
+But, if user click on innermost ?
+If user click on innermost then event will propagation to other 2 also because they are the parent element of innermost.
+
+Fixing the problem with stopPropagation()
+------------------------------------------
+event bubbling can sometimes create problems, but there is a way to prevent it. The Event object has a function available on it 
+called stopPropagation() which,when called inside an event handler, prevents the event from bubbling up to any other elements.
+
+Timing Events
+--------------
+The window object allows execution of code at specified time intervals.
+These time intervals are called timing events.
+The two key methods to use with JavaScript are:
+
+setTimeout(function, milliseconds)
+-----------------------------------
+Executes a function, after waiting a specified number of milliseconds.
+
+The clearTimeout() method uses the variable returned from setTimeout():
+
+setInterval(function, milliseconds)
+----------------------------------
+Same as setTimeout(), but repeats the execution of the function continuously.
+The clearInterval() method stops the executions of the function specified in the setInterval() method.
+
+syntax - 
+window.setTimeout(function, milliseconds);
+The window.setTimeout() method can be written without the window prefix.same goes for setInterval().
+
+explore more type of events :- https://data-flair.training/blogs/javascript-event-types/

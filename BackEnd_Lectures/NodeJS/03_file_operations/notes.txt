@@ -1,0 +1,14 @@
+File Opeartions in nodejs
+-------------------------
+Node.js provides the functionality to read and write files from the computer. Reading and Writing the 
+file in Node.js is done by using one of the coolest Node.js modules called fs module, it is one of the 
+most well-known built-in Node.js modules out there.
+
+The file can be read and written in node.js in both Synchronous and Asynchronous ways. A Synchronous method is 
+a code-blocking method which means the given method will block the execution of code until its execution is 
+finished (i.e. Complete file is read or written). On the other hand, an Asynchronous method has a callback
+function that is executed on completion of the execution of the given method and thus allows code to run 
+during the completion of its execution. Or according to modern JavaScript, asynchronous methods return a 
+Promise which implies the eventual completion of the ongoing asynchronous method, the Promise will either
+be resolved or rejected. Thus, it is non-blocking.
+

@@ -1,0 +1,10 @@
+Bookmarks
+----------
+Bookmarks can be useful if a web page is very long.
+To create a bookmark - first create the bookmark, then add a link to it.
+When the link is clicked, the page will scroll down or up to the location with the bookmark.
+
+e.g
+<a href="#C4">Jump to Chapter 4</a>
+
+<h2 id="C4">Chapter 4</h2>

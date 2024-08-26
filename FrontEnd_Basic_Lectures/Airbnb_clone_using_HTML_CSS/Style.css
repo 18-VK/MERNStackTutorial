@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.logo {
+    color: #ff385c;
+    position: relative;
+    left: 50px;
+}
+
+.header-upper-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    left: 20px;
+}
+
+.headers-options {
+    display: flex;
+    gap: 20px;
+}
+
+.yourhome-and-menu {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    right: 70px;
+}
+
+.Header-menu {
+    display: flex;
+    gap: 10px;
+    padding: 5px 7px;
+    border: 1px solid rgb(206, 204, 204);
+    border-radius: 79px;
+    align-items: center;
+}
+
+.Header-menu span {
+    width: 30px;
+    color: gray;
+}
+
+.lang {
+    height: 30px;
+    width: 30px;
+    border-radius: 360px;
+}
+
+.header-down-part {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 70vw;
+    align-items: center;
+    top: 30px;
+    bottom: 20px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid rgb(206, 204, 204);
+}
+.Sec-4 {
+    display: flex;
+    align-items: center;
+    gap:80px;
+    justify-content: space-between;
+}
+.Main-search
+{
+    background-color: #ff385c;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    color: white;
+}
+.Sec-1 input {
+    border: none;
+}
+.Sec :nth-child(1){
+    font-size: 12px;
+    font-weight: 600;
+}
+.Sec :nth-child(2) {
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
+}
+.seperate
+{
+    height: 25px;
+    border-right: 1px solid #afabab;
+}
+.sticky-nav
+{
+    border: 2px solid black;
+    position: relative;
+    top: 60px;
+    display: grid;
+    grid-template-columns: repeat(13,auto);
+    /* justify-items: center; */
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+    gap: 10px;
+    height: 90px;
+    color: #afabab;
+    font-weight: 600;   
+    font-size: 12px;
+}
+.sticky-option
+{
+    justify-self: center;
+    text-align: center;
+}
+.filter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10PX;
+    padding: 10px;
+    border: 1px solid  #afabab;
+    border-radius: 10px;
+    color: black;
+}

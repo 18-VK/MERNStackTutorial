@@ -1,0 +1,46 @@
+How to Select DOM Elements?
+-----------------------------
+JavaScript provides several methods to select DOM elements. Here are some of them:
+
+> Using getElementById:
+------------------------
+The getElementById method allows you to select an element by its ID. This method returns the element object if it finds an element
+with the specified ID, otherwise, it returns null.
+
+let element = document.getElementById("myId");
+
+> Using getElementsByClassName:
+--------------------------------
+The getElementsByClassName method allows you to select elements by their class name. It returns a collection of all elements in
+the document with the specified class name.
+
+let elements = document.getElementsByClassName("myClass");
+
+
+> Using getElementsByTagName
+-----------------------------
+This method returns all the elements that matches the specified Tag name.
+
+let listElements = document.getElementsByTagName('li');
+
+
+> Using querySelector
+-----------------------
+This one returns the first element that matches the specified CSS selector in the document.
+
+- document.querySelector('li') returns the first element that matches the CSS selector li. Remaining elements are ignored.
+- document.querySelector('.heading') returns the first element that matches the CSS selector .heading.
+- document.querySelector('#item') returns the first element that matches the CSS selector #heading.
+As you can see, we can use all kinds of CSS selectors within the querySelector method that we will use in a normal CSS file.
+
+
+> querySelectorAll
+-------------------
+This method returns all the elements that match the specified CSS selector in the document.
+
+Note :- Dom style object properties
+link - https://www.w3schools.com/jsref/dom_obj_style.asp
+
+
+
+

@@ -1,0 +1,11 @@
+"box-shadow: h-offset v-offset blur spread color inset;"
+
+    h-offset and v-offset: Determines the shadow's horizontal and vertical position.
+    blur: The larger the value, the blurrier the shadow.
+    spread: Expands or shrinks the shadow size.
+    color: Defines the shadow color.
+    inset: Makes the shadow inner.
+
+link - https://www.codewithharry.com/tutorial/css-shadows/
+
+outline: width style color;

@@ -1,0 +1,77 @@
+Destructuring in js
+-------------------
+The destructuring assignment syntax is a JavaScript expression that makes it possible to 
+unpack values from arrays, or properties from objects, into distinct variables.
+
+Note: The order of the name does not matter in object destructuring.
+For example, you could write the above program as:
+
+let { age, gender, name } = person;
+console.log(name); // Sara
+
+Note: When destructuring objects, you should use the same name for the variable as the corresponding object key.
+If you want to assign different variable names for the object key, you can use:
+
+// using different variable names
+let { name: name1, age: age1, gender:gender1 } = person;
+
+Note: The variable with the spread syntax cannot have a trailing comma ,. You should use this rest element 
+(variable with spread syntax) as the last variable.
+
+Spread Operator 
+----------------
+The JavaScript spread operator ... is used to expand or spread out elements of an iterable, such as an array, string, or object.
+This makes it incredibly useful for tasks like combining arrays, passing elements to functions as separate arguments, or
+even copying arrays.
+
+Note : - Only iterable values, like Array and String, can be spread in array literals and argument lists. Many objects are not iterable
+
+Rest Parameter
+---------------
+When the spread operator is used as a parameter, it is known as the rest parameter.
+You can accept multiple arguments in a function call using the rest parameter. 
+
+While the spread operator expands elements, the rest operator condenses them into a single entity within function parameters or
+array destructuring. 
+It collects remaining elements into a designated variable, facilitating flexible function definitions and array manipulation.
+
+Note: Using the rest parameter will pass the arguments as array elements.
+
+Immediately Invoked Function Expressions (IIFE)
+------------------------------------------------
+Immediately Invoked Function Expressions (IIFE) are JavaScript functions that are executed immediately after they are defined. 
+They are typically used to create a local scope for variables to prevent them from polluting the global scope.
+
+e.g 
+(function() {
+    // IIFE code block
+    var localVar = 'This is a local variable';
+    console.log(localVar); // Output: This is a local variable
+})();
+
+Use Cases Of IIFE
+> Avoid polluting the global namespace.
+> To create closures in JavaScript.
+> IIFE is used to create private and  public variables and methods.
+> It is used to execute the async and await function.
+> It is used to work with require function.
+
+closures 
+--------
+Closures are a powerful and fundamental concept in JavaScript. They allow inner functions to access variables from their outer
+scope, even after the outer function has completed execution.
+In simpler terms, a closure “closes over” its lexical scope, preserving the variables and scope of the outer function.
+
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+When you create a closure, you gain access to an outer function’s scope from an inner function. 
+
+Note: Closure is the concept of function + lexical environment in which function it was created. so every function declared 
+within another function then it has access to the scope chain of the outer function and the variables created within the scope 
+of the outer function will not get destroyed.
+
+Note: It may be slightly difficult to get the concept of closure at once but try experimenting with 
+      closure in different scenarios like for creating getter/setter, callbacks, and so on. 
+link - https://www.geeksforgeeks.org/closure-in-javascript/
+     - https://www.linkedin.com/pulse/practical-applications-closure-javascript-s-heaven
+     - https://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript 
+     

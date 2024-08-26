@@ -1,0 +1,32 @@
+link - https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+
+DOMParser
+-----------
+The DOMParser interface provides the ability to parse XML or HTML source code from a string into a DOM Document.
+Note - A lot of browser functionalities, like DOM manipulations or XHR, are not available natively NodeJS because 
+       that is not a typical server task to access the DOM - you'll have to use an external library to do that.
+
+XML2JS library
+---------------
+https://www.npmjs.com/package/xml2js
+
+In this approach, we are using the xml2js library in JavaScript to parse XML data asynchronously. The parseString 
+function converts XML into a JavaScript object, enabling easy access to elements for further processing or display.
+
+Json Parser 
+-----------
+The JSON.parse() method in JavaScript is used to parse a JSON string which is written in a JSON format and 
+returns a JavaScript object. 
+
+Syntax:
+JSON.parse( string, function )
+Parameters: This method accepts two parameters as mentioned above and described below:
+
+> string: It is a required parameter and it contains a string that is written in JSON format.
+> function: It is an optional parameter and is used to transform results. The function called for each item.
+Return Value: This method returns an object corresponding to the given JSON text.
+
+How to iterate over a JavaScript object ?
+-----------------------------------------
+
+https://www.geeksforgeeks.org/how-to-iterate-over-a-javascript-object/

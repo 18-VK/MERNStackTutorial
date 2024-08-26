@@ -1,0 +1,143 @@
+Extra - Strict mode in js 
+        link - https://www.freecodecamp.org/news/how-to-use-strict-mode-in-javascript/
+
+Object-oriented programming in JavaScript
+-----------------------------------------
+OOP is a programming paradigm that believes in grouping data (properties) and methods (actions) together inside a box.
+It demonstrates the pattern of real-world objects.
+
+Note: JavaScript is not an object-oriented language. Neither is it completely a functional language. JavaScript is a 
+prototype-based procedural language. It supports both functional and object-oriented patterns of programming.
+
+OOPs Concept in JavaScript
+---------------------------
+> Object	
+> Classes	
+> Encapsulation
+> Abstraction	
+> Inheritance	
+> Polymorphism
+
+Is JavaScript Object-Oriented?
+-------------------------------
+We need to understand the difference between OOP and Prototype-based programming, before finding the answer to this common 
+question - ' Is JavaScript Object-oriented?'.
+
+> Object-Oriented Programming (OOP) The object-oriented paradigm keeps data and actions grouped together inside classes.
+In OOP, we create classes and then create their instances called objects.
+
+> Prototype-based Programming In Prototype-based programming, we derive objects from other already existing objects.
+
+Note: Prototypes are the mechanism by which JavaScript objects inherit features from one another. --MDN Docs
+
+Object
+------
+An object is a collection of related data and/or functionality. These usually consist of several
+variables and functions (which are called properties and methods when they are inside objects).
+
+e.g
+const person = {
+  name: ["Bob", "Smith"],
+  age: 32,
+  bio: function () {
+    console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+  },
+  introduceSelf: function () {
+    console.log(`Hi! I'm ${this.name[0]}.`);
+  },
+};
+
+Objects as object properties
+------------------------------
+An object property can itself be an object.
+e.g
+const person = {
+  name: {
+    first: "Bob",
+    last: "Smith",
+  },
+  age: 32
+};
+
+Bracket notation
+-----------------
+Bracket notation provides an alternative way to access object properties. Instead of using dot notation like this:
+
+person.age;
+person.name.first;
+
+You can instead use square brackets:
+
+person["age"];
+person["name"]["first"];
+
+This looks very similar to how you access the items in an array, and it is basically the same thing — instead of using an index number to select an item, you are 
+using the name associated with each member's value. It is no wonder that objects are sometimes called associative arrays — they map strings to values in the same 
+way that arrays map numbers to values.
+
+this keyword
+-------------
+In JavaScript, the this keyword refers to an object.
+Which object depends on how this is being invoked (used or called).
+The this keyword refers to different objects depending on how it is used.
+
+The this keyword refers to the context where a piece of code, such as a function's body, is supposed to run. Most typically,
+it is used in object methods,where this refers to the object that the method is attached to, thus allowing the same method to
+be reused on different objects.
+
+The value of this in JavaScript depends on how a function is invoked (runtime binding), not how it is defined. When a regular 
+function is invoked as a method of an object (obj.method()), this points to that object.When invoked as a standalone function
+(not attached to an object: func()), this typically refers to the global object (in non-strict mode) or undefined (in strict mode).
+
+Value of this in diff. context 
+-------------------------------
+-> In an object method, this refers to the object.
+-> Alone, this refers to the global object(window object in js, global object in nodejs)
+-> In a function, this refers to the global object(window object in js, global object in nodejs)
+-> In a function, in strict mode, this is undefined.
+-> In an event, this refers to the element that received the event.
+
+functions are objects
+---------------------
+In JavaScript, functions are called Function Objects because they are objects. Just like objects, functions have properties and
+methods, they can be stored in a variable or an array, and be passed as arguments to other functions.
+
+Function constructor
+----------------------
+you can use a constructor function to define a custom type and the new operator to create multiple objects from this type.
+Technically speaking, a constructor function is a regular function with the following convention:
+
+> The name of a constructor function starts with a capital letter like Person, Document, etc.
+> A constructor function should be called only with the new operator.
+
+Note that ES6 introduces the class keyword that allows you to define a custom type. 
+Classes are just syntactic sugar over the constructor functions with some enhancements.
+
+To create a new instance of the Person, you use the new operator:
+let person = new Person('John','Doe');
+
+Basically, the new operator does the following:
+
+> Create a new empty object and assign it to the this variable.
+> Assign the arguments 'John' and 'Doe' to the firstName and lastName properties of the object.
+> Return the this value.
+
+The problem with the constructor function is that when you create multiple instances of the Person, the this.getFullName() is
+duplicated in every instance, which is not memory efficient.
+To resolve this, you can use the prototype so that all instances of a custom type can share the same methods.
+
+Note :
+You cannot add a new method to an function constructor the same way you add a new method to an existing object.
+Adding methods to an Function constructor must be done inside the constructor function.
+
+link - https://www.javascripttutorial.net/javascript-constructor-function/
+Note :- Read it to get more info about return type and more..
+
+Encapsulation
+--------------
+Encapsulation in JavaScript can be achieved using closures or by using private fields (introduced in ES2020).
+
+In JavaScript, the # symbol is used to define private fields within a class. Private fields are a feature introduced in
+ECMAScript 2020 (ES11) that allow you to create properties that are not accessible outside of the class in which they are
+defined. This provides better encapsulation and helps in preventing accidental or unauthorized access to internal data of
+an object.

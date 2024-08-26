@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+
+<body>
+  <!-- include html code of different file using include -->
+  <%- include('navbar') %>
+  <h1><%= message %></h1>
+
+  <% if (users.length > 0) { %>
+  <ul>
+    <% users.forEach(user => { %>
+    <li><%= user.name %></li>
+    <% }) %>
+  </ul>
+  <% } else { %>
+  <p>No users found.</p>
+  <% } %>
+  <p>Your username is: <%= username %></p>
+  <p>Your profile bio: <%- bio %></p>
+  <div><%# hgjhghdfggkhfghghdhgfth%></div> <!-- comment in ejs-->
+</body>
+
+</html>

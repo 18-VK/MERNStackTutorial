@@ -1,0 +1,19 @@
+ExpressJS
+---------
+Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and
+mobile applications. It simplifies the process of building web servers and APIs.
+
+Express.js offers a robust set of features that enhance your productivity and streamline your web application. It makes 
+it easier to organize your application’s functionality with middleware and routing. It adds helpful utilities to Node 
+HTTP objects and facilitates the rendering of dynamic HTTP objects.
+
+cmd to install express in node application: 
+    npm install express
+
+Routing in ExpressJS
+---------------------
+Define how an application responds to a client request to a particular endpoint
+
+Route Parameters: Capture values specified at their position in the URL.
+
+

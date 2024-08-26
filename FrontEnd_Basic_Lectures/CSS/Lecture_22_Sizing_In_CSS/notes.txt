@@ -1,0 +1,15 @@
+Sizing in CSS - 
+https://www.codewithharry.com/tutorial/css-size/
+
+
+
+VARIOUS WAYS TO ACHIEVE RESPONSIVE DESIGN
+1. Setting up the viewport
+2. Use max-width/max-height
+3. Using CSS Media Queries
+4. Using rem/vh/vw units over pixels
+
+
+max-height, min-height, max-width and min-width
+
+https://www.freecodecamp.org/news/css-properties-examples/

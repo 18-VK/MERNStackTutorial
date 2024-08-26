@@ -1,0 +1,133 @@
+EJS(Embedded JavaScript)
+------------------------
+check this link - https://ejs.co/#docs
+
+EJS (Embedded JavaScript) is a popular templating engine used to generate HTML dynamically in Node.js applications. It 
+allows you to embed JavaScript logic within HTML, enabling you to create dynamic web pages efficiently.
+
+EJS (Embedded JavaScript) is a simple templating engine that lets you generate HTML markup with plain JavaScript. It
+helps you separate the logic and structure of your web pages from the data and business logic. With EJS, you can embed 
+JavaScript code into HTML using special tags.
+
+Key Features of EJS
+--------------------
+> Embedded JavaScript: EJS lets you embed JavaScript code directly in your HTML.
+> Conditional Statements and Loops: You can use JavaScript logic such as if statements and for loops within your
+                                     templates.
+> Partial Templates: EJS supports partials, allowing you to reuse code snippets across different views.
+> Simple Syntax: EJS uses a straightforward syntax, making it easy to learn and use.
+
+Basic Syntax 
+--------------
+EJS uses the following syntax for embedding JavaScript in HTML:
+
+> Output Variables: <%= variable %> — Outputs the value of variable and escapes HTML.
+> Unescaped Output: <%- variable %> — Outputs the value of variable without escaping HTML.
+> JavaScript Code: <% code %> — Executes JavaScript code but does not output the result.
+> Control Flow: <% if (condition) { %> ... <% } %> — Embeds JavaScript control flow like conditionals and loops.
+
+Steps to follow :
+
+1. Set Up Your Project
+First, make sure you have Express and EJS installed. If not, install them using npm:
+
+2. Create Your Express Application
+Create a basic Express application and configure it to use EJS as the templating engine.
+
+3. Create Your EJS Templates
+Create a views directory and add EJS templates inside it.
+
+
+Explanation of How EJS Works with Express
+> app.set('view engine', 'ejs'): Configures Express to use EJS as the templating engine.
+> app.set('views', path.join(__dirname, 'views')): Specifies the directory where EJS templates are located.
+> res.render('index', data): Renders the index.ejs template and passes the data object to it. The EJS template is 
+                           processed, and the resulting HTML is sent to the client.
+
+
+<%= variable %> and  <%- variable %> 
+-------------------------------------
+These are used to insert values into your HTML templates, but they handle escaping differently.
+
+<%= variable %> :
+This tag is used to output the value of variable and escape HTML characters to prevent potential security issues like 
+cross-site scripting (XSS) attacks.
+It escapes special HTML characters such as <, >, &, and " so that they are rendered as plain text rather than being 
+interpreted as HTML. This helps to avoid rendering potentially dangerous code in the HTML.
+
+e.g 
+
+Html : <p>Your username is: <%= username %></p>
+       If username is <script>alert('XSS');</script>
+
+Output : <p>Your username is: &lt;script&gt;alert(&#39;XSS&#39;);&lt;/script&gt;</p>
+
+Note : It will not treat this statement as html code 
+       the HTML tags in the username variable are escaped and will be displayed as text rather than being executed as HTML.
+
+<%- variable %>  :
+
+This tag is used to output the value of variable without escaping HTML characters. It’s useful when you want to 
+include raw HTML in your templates.
+
+It does not escape any HTML characters, which means any HTML or JavaScript code within the variable will be rendered 
+as it is. This can be useful for rendering HTML content or allowing user-generated HTML, but it also poses a security 
+risk if not handled carefully.
+
+Html : <p>Your profile bio: <%- bio %></p>
+       If bio is <strong>Welcome to my profile!</strong>
+
+output : <p>Your profile bio: <strong>Welcome to my profile!</strong></p>
+
+Note : it will treat the variable value as it is (HTML or JavaScript)
+       the HTML tags in bio are rendered as HTML, making the text bold.
+
+App.set() method 
+-----------------
+In Express.js, app.set() is a method used to configure various settings for your Express application. It allows you to
+set application-level settings that can influence the behavior of your application and how it handles requests and responses.
+
+syntax : 
+app.set(settingName, value);
+
+Common Use Cases
+-----------------
+Here are some common settings you might configure with app.set():
+
+1. View Engine:
+Configure the templating engine used for rendering views.
+
+app.set('view engine', 'ejs'); // Set EJS as the view engine
+
+2. Views Directory:
+Specify the directory where view templates are stored.
+
+app.set('views', path.join(__dirname, 'views')); // Set views directory
+
+3. Port Number:
+Define the port number for the application (although it's more common to use environment variables for this).
+
+app.set('port', 3000); // Set port number
+
+4.Environment:
+Configure the environment mode (e.g., development, production).
+
+app.set('env', 'development'); // Set the environment mode
+
+5.Trust Proxy:
+Configure whether to trust the X-Forwarded-* headers.
+
+app.set('trust proxy', true); // Trust the proxy headers
+
+
+Include in ejs
+--------------
+In EJS (Embedded JavaScript), you can include partial templates or files within other EJS templates using the 
+<%- include %> syntax. This is useful for reusing code across multiple templates, such as headers, footers, or 
+navigation bars.
+
+The <%- include %> directive allows you to include another EJS template file. Here’s how you can use it:
+syntax :
+
+<%- include('filename') %>
+

@@ -1,0 +1,23 @@
+Enums in javascript
+-------------------
+Enums in JavaScript are used to represent a fixed set of named values. They allow developers to define a list of named constants, 
+which can be used throughout the codebase to increase code readability, maintainability and prevent errors.
+However, Enums are not native to JavaScript, so they are usually implemented using objects or frozen arrays.
+
+Object.freeze() Method: One way to create an Enum-like object is by defining a plain JavaScript object with constant property 
+values, and then using Object.freeze() to prevent any further modification. This will ensure that the object and its properties
+cannot be changed or mutated. You can use the Object.freeze() method to prevent any changes to the object. Once an object is 
+frozen, you cannot add, modify or delete any of its properties. You can use this method to create an immutable object that 
+represents your Enum.
+
+Call method
+-------------
+With the call() method, you can write a method that can be used on different objects.
+In JavaScript all functions are object methods.
+If a function is not a method of a JavaScript object, it is a function of the global object 
+
+The call() method is a predefined JavaScript method.
+It can be used to invoke (call) a method with an owner object as an argument (parameter).
+With call(), an object can use a method belonging to another object.
+
+

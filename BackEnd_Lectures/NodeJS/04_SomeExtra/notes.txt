@@ -1,0 +1,109 @@
+Global in Nodejs
+------------------
+In Node.js, global is an object that serves as the global namespace object. Any property attached to the global
+object becomes globally accessible throughout the Node.js application.
+
+Here are some key points about global in Node.js:
+
+1. Scope: Variables declared using var, let, or const within a module are scoped to that module and not global. 
+To make a variable global, it has to be attached to the global object.
+
+E.g 
+    global.myVariable = "Hello, World!";
+    console.log(global.myVariable); // Outputs: Hello, World!
+
+2.Avoid Polluting the Global Namespace: It's generally considered bad practice to pollute the global namespace. 
+Instead, prefer module exports and imports to manage your application's variables and functions.
+
+3. Global Functions: Some functions and objects are automatically available globally in Node.js, such as setTimeout,
+console, and process.
+
+4. Modules: Node.js modules are not global by default. Each module has its own scope. To share code across modules,
+use module.exports and require.
+
+e.g 
+// In a module file (moduleA.js)
+module.exports = function() {
+    console.log("Hello from moduleA");
+};
+
+// In another file
+const moduleA = require('./moduleA');
+moduleA(); // Outputs: Hello from moduleA
+
+Here's an example of using the global object:
+---------------------------------------------
+// globalExample.js
+global.globalVar = "I am global";
+
+function printGlobalVar() {
+    console.log(globalVar); // Accessing global variable directly
+}
+
+printGlobalVar(); // Outputs: I am global
+
+Good Practices
+> Module Exports: Use module.exports to expose variables or functions rather than attaching them to the global object.
+> Environment Variables: Use environment variables for configuration data rather than global variables.
+> Encapsulation: Encapsulate your code within modules to keep the global namespace clean.
+
+Module in Nodejs
+----------------
+In Node.js, modules are a way to structure and organize code into separate files, making it easier to manage, maintain,
+and reuse. Node.js uses the CommonJS module system, which provides a simple way to export and import code between files.
+
+Key Concepts of Modules in Node.js
+> Creating a Module: Any JavaScript file in Node.js can be treated as a module.
+> Exporting from a Module: Use module.exports or exports to expose variables, functions, or objects from a module.
+> Importing a Module: Use require() to import the contents of a module
+
+Note : That 'module' object is not the part of global object
+
+Module wrapper function
+------------------------
+In Node.js, every module is wrapped in a function before it is executed. This is known as the "module wrapper function".
+The module wrapper function provides each module with its own scope and gives it access to some special variables and 
+functions. This ensures that variables and functions defined in one module do not accidentally pollute the global scope
+or interfere with other modules.
+
+The Module Wrapper Function
+When a module is loaded, Node.js internally wraps the module code with a function that looks like this:
+
+(function (exports, require, module, __filename, __dirname) {
+    // Module code actually lives here
+});
+
+Parameters of the Wrapper Function
+-----------------------------------
+> exports: A reference to module.exports that is initially an empty object. You can use it to export variables, functions
+, or objects from the module.
+> require: A function to import modules.
+> module: An object representing the current module. It has an exports property (initially set to exports), which is 
+used to define what the module exports.
+> __filename: The absolute path of the current module file.
+> __dirname: The directory name of the current module file.
+
+Conclusion :
+The module wrapper function in Node.js is a powerful feature that provides each module with a private scope and access to
+essential variables and functions. It ensures that modules remain encapsulated and easy to manage, making Node.js a 
+robust environment for building modular applications.
+
+Path module
+------------
+The path module in Node.js provides utilities for working with file and directory paths. It is part of the Node.js core 
+modules, so you don't need to install it separately; you can simply require it in your code.
+
+Basic Usage
+To use the path module, you first need to require it:
+const path = require('path');
+
+Conclusion :
+The path module is an essential utility for file and directory path operations in Node.js, providing a wide range of methods
+to handle paths efficiently and consistently across different platforms.
+
+OS module in Nodejs
+-------------------
+The os module in Node.js provides a set of operating system-related utility methods and properties. It allows you to
+interact with the underlying operating system and retrieve information about it. As a core module,it does not require
+installation and can be included in your application with a simple require statement.
+

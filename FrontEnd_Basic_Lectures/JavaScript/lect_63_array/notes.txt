@@ -1,0 +1,36 @@
+Array
+--------
+JavaScript Array is a data structure that allows you to store and organize multiple values within a single variable. 
+It is a versatile and dynamic object. It can hold various data types, including numbers, strings, objects, and even other arrays. 
+Arrays in JavaScript are zero-indexed i.e. the first element is accessed with an index 0.
+
+>JavaScript arrays are resizable and can contain a mix of different data types. 
+
+
+Function
+--------
+map():-
+    >creates a new array from calling a function for every array element.
+    >does not execute the function for empty elements.
+    >does not change the original array.
+
+Syntax :- array.map(function(currentValue, index, arr), thisValue)
+
+function():-Required-A function to be run for each array element.
+currentValue:- Required-The value of the current element.
+index:- Optional-The index of the current element.
+arr:-Optional-The array of the current element.
+thisValue:-Optional-Default value undefined.A value passed to the function to be used as its this value.
+
+
+
+Map vs filter
+-------------
+'Map' is used to apply a function on every item in an array and returns the new array. 'Filter' is used to create a new array 
+from an existing one, containing only those items that satisfy a condition specified in a function.
+
+Reduce method
+--------------
+The reduce() method executes a reducer function for array element. The reduce() method returns a single value: 
+the function's accumulated result.
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let TestApi = async function (params) {
+            // let fetchData = await fetch('/', {method : 'POST'})
+            let fetchData = await fetch('/Putreq', {method : 'PUT'})
+            
+            console.log(fetchData)
+            let Data = await fetchData.text();
+            console.log(Data);
+        }
+        TestApi();
+    </script>
+</body>
+</html>

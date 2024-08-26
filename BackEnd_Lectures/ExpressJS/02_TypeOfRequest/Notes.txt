@@ -1,0 +1,67 @@
+Http requests
+-------------
+HTTP (Hypertext Transfer Protocol) specifies a collection of request methods to specify what action is to be performed on
+a particular resource. The most commonly used HTTP request methods are GET, POST, PUT, PATCH, and DELETE. These are 
+equivalent to the CRUD operations (create, read, update, and delete).
+
+> GET: GET request is used to read/retrieve data from a web server. GET returns an HTTP status code of 200 (OK) if the
+data is successfully retrieved from the server.
+
+> POST: POST request is used to send data (file, form data, etc.) to the server. On successful creation, it returns an
+HTTP status code of 201.
+
+> PUT: A PUT request is used to modify the data on the server. It replaces the entire content at a particular location with
+data that is passed in the body payload. If there are no resources that match the request, it will generate one.
+
+> PATCH: PATCH is similar to PUT request, but the only difference is, it modifies a part of the data. It will only replace
+the content that you want to update.
+
+> DELETE: A DELETE request is used to delete the data on the server at a specified location.
+
+Express Routes
+---------------
+In Express.js, routes are used to determine how an application responds to a client request to a particular endpoint, which 
+is a URL path and a specific HTTP method (GET, POST, PUT, DELETE, etc.). Express provides a flexible way to define routes 
+using the app object or an express.Router() instance. Routes can handle different HTTP methods and can be organized in 
+various ways to keep your application modular and maintainable.
+
+1. Basic Routing 
+------------------
+Express routes are defined using methods on the app object. Each method corresponds to an HTTP method and accepts a path 
+and a callback function.
+
+    const express = require('express');
+    const app = express();
+
+    // GET request to the root URL "/"
+    app.get('/', (req, res) => {
+        res.send('Hello, World!');
+    });
+
+2.Handling Multiple HTTP Methods
+----------------------------------
+You can handle different HTTP methods for the same route using separate functions or using the app.route() method.
+
+The app.route() function returns an instance of a single route, which you can then use to handle HTTP verbs with optional 
+middleware. Use app.route() to avoid duplicate route names (and thus typo errors). 
+
+
+app.get('/item/:id', (req, res) => {
+    res.send(`Get item with ID ${req.params.id}`);
+});
+
+app.put('/item/:id', (req, res) => {
+    res.send(`Update item with ID ${req.params.id}`);
+});
+
+app.delete('/item/:id', (req, res) => {
+    res.send(`Delete item with ID ${req.params.id}`);
+});
+
+
+3.Using express.Router for Modular Routing
+-------------------------------------------
+express.Router allows you to create modular route handlers. You can group related routes together and export them as a
+module.
+
+Note :- this makes code maintainable, while maitain related API endpoint in a seperate file

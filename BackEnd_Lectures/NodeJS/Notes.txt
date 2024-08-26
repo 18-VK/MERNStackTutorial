@@ -1,0 +1,211 @@
+NodeJS Introduction
+--------------------
+Node.js (Node js) is an open-source and cross-platform JavaScript runtime environment. It runs on Chrome’s V8 JavaScript engine. 
+It allows developers to run JavaScript code on the server. Node.js enables developers to get into the server-side world.
+
+Node.js is an open source server environment that uses JavaScript on server. A Node.js application runs within a single process, without generating a
+new thread for each request. Node.js includes asynchronous I/O primitives as a part of its standard library, which prevents JavaScript code from 
+blocking and, in general, libraries in Node.js are developed using non-blocking paradigms. This makes blocking behaviour the exception instead of the 
+rule.
+
+> Runtime Environment: Node.js is built on Chrome's V8 JavaScript engine, providing a runtime environment for executing JavaScript code server-side.
+> Non-blocking I/O: Node.js uses an event-driven, non-blocking I/O model, which makes it lightweight and efficient for data-intensive real-time 
+                    applications.
+> Single-threaded: Despite being single-threaded, Node.js can handle multiple connections concurrently thanks to its asynchronous nature.
+
+Prerequisites to Learn Node.js
+-------------------------------
+> Basic understanding of JavaScript programming language.
+> Understanding of server-side concepts such as handling requests and responses.
+
+Why to learn Node.js?
+----------------------
+Node.js is famous due to the use of JavaScript across the entire stack, asynchronous programming model for handling multiple requests simultaneously, 
+fast execution due to the V8 engine, large and active community support, scalability for real-time applications, cross-platform compatibility, and its 
+role in enabling full-stack development. All these features make Node.js very fast and popular.
+
+Well before getting deep down in the Node.js tutorial there is a certain requirement.
+
+Key Features of Node.js:
+
+> JavaScript Everywhere: Node.js enables developers to use JavaScript across the entire stack, from front-end to back-end. This consistency simplifies 
+                    development and reduces context switching.
+> Asynchronous Programming Model: Node.js uses an event-driven, non-blocking (asynchronous) I/O model. This allows handling multiple requests 
+                    simultaneously without blocking the execution of other tasks. As a result, Node.js applications are highly responsive and efficient.
+> Fast Execution: Node.js leverages the V8 engine, developed by Google, which compiles and executes JavaScript at lightning speeds. This performance 
+                    advantage makes it suitable for real-time applications and microservices.
+> Large and Active Community: Node.js has a vibrant community of developers, libraries, and tools. You’ll find extensive resources, tutorials, and 
+                    support to enhance your learning experience.
+> Scalability: Node.js is lightweight and scalable, making it an excellent choice for building real-time applications, RESTful APIs, and microservices.
+> Cross-Platform Compatibility: Node.js runs on Windows, Linux, Unix, macOS, and more. This flexibility allows developers to write code once and deploy
+                     it anywhere.
+
+
+NPM in NodeJS
+--------------
+npm stands for Node Package Manager. It’s a library and registry for JavaScript software packages.
+npm also has command-line tools to help you install the different packages and manage their dependencies.
+
+Brand Studio Logo
+Node package manager (npm) is a package manager and a software register but it’s also a place where developers 
+can find, build and manage code packages. Right now, npm contains over 800,000 packages for various applications,
+from front-end and robotics to mobile apps.
+
+Key Features of NPM
+-------------------
+> Package Management: Easily install, update, and manage third-party packages (libraries) and modules.
+> Version Control: Ensure that your project uses the correct versions of dependencies.
+> Scripts: Automate tasks with custom scripts.
+
+why to use NPM?
+----------------
+You can easily define your dependencies inside a pacakge.json file, which you will find included in all code
+packages on npm. When we use npm, we often run an npm install command on that JSON file to install all needed 
+dependencies for a specific code package. In the package.json file, you will find the different versions of 
+the dependencies on which the package depends to avoid using versions that will break the code.
+
+What is a package.json?
+-------------------------
+A package.json file is created by your package manager (in this case npm) and exists at the root of a project
+in JavaScript/Node. To generate a package.json file you can run npm init. You’ll then be asked to fill out some metadata for your project such as:
+
+> Name – your project’s name
+> Version – current version in major.minor.patch format (1.0.0, 1.2.3, etc.)
+> Description – description of the project
+> License – the license your project is under, so people
+            know how they are allowed to use it. Full list of licenses on the Software License Data Exchange site.
+
+The package.json file is in JSON format and is used for managing the project’s dependencies, scripts, versions, etc. Here’s a simple example:
+
+{
+  "name": "My cool project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+  },
+  "license": "ISC"
+}
+
+Useful commands
+---------------
+
+-> Installing NPM
+When you install Node.js, NPM is automatically installed. To verify the installation, 
+open a terminal or command prompt and run:
+
+node -v
+npm -v
+
+Basic NPM Command
+-----------------
+Here are some basic NPM commands that you will frequently use:
+
+1. Initialize a Project
+
+   npm init
+   
+   This command will guide you through creating a `package.json` file, which holds metadata about your project and its dependencies.
+
+2. Install a Package
+   
+   npm install <package-name>
+   
+   This command installs the specified package and adds it to the `node_modules` directory. It also updates the `package.json` and `package-lock.json` files.
+
+   Example:
+   npm install express
+   
+
+3. Install a Package Globally
+   
+   npm install -g <package-name>
+   
+   This installs the package globally on your system, making it available from any directory.
+
+   Example:
+   npm install -g nodemon
+   
+
+4. Install Packages from `package.json`
+
+   npm install
+   
+   This command installs all the dependencies listed in the `package.json` file.
+
+5. Uninstall a Package
+   
+   npm uninstall <package-name>
+   
+   This removes the specified package from the `node_modules` directory and updates the `package.json` file.
+   Example:
+   npm uninstall express
+   
+
+6. Update a Package
+   npm update <package-name>
+   
+   This updates the specified package to the latest version that matches the version range specified in the `package.json`.
+
+7. Run Scripts
+
+   npm run <script-name>
+   This runs the custom scripts defined in the `scripts` section of the `package.json`.
+
+   Example `package.json`:
+   {
+     "scripts": {
+       "start": "node app.js",
+       "test": "echo \"Error: no test specified\" && exit 1"
+     }
+   }
+   
+   To run the start script:
+   npm run start
+
+-> Example Workflow
+1. Create a new project:
+
+   mkdir my-project
+   cd my-project
+   npm init -y
+   
+   The `-y` flag automatically answers "yes" to all prompts.
+
+2. Install a dependency:
+
+   npm install express
+
+3. Create an entry point:
+   Create a file named `app.js` and add the following code:
+      
+   const express = require('express');
+   const app = express();
+
+   app.get('/', (req, res) => {
+     res.send('Hello World!');
+   });
+
+   app.listen(3000, () => {
+     console.log('Server is running on port 3000');
+   });
+
+4. Run the project:
+   Add a start script to the `package.json`:
+   a) using JSON
+   "scripts": {
+     "start": "node app.js"
+   }
+
+   Run the project using:
+   b) using sh 
+   npm run start
+
+
+-> Conclusion
+NPM is a powerful tool that simplifies package management and project automation in Node.js applications. 
+By understanding and utilizing NPM, you can efficiently manage your project's dependencies and scripts, allowing you to focus on writing great code.

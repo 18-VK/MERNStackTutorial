@@ -1,0 +1,21 @@
+Box model - The CSS Box model defines how elements are rendered and how their dimensions are calculated.
+It describes the structure of an element as a rectangular box that has content, padding, a border, and a margin.
+    link -  https://www.codewithharry.com/tutorial/css-box-model/
+The box model consists of four main components, which are
+1. Content
+2. Padding
+3. Border
+4. Margin
+
+
+1.Padding
+    https://www.codewithharry.com/tutorial/css-padding/
+2.Border
+    https://www.codewithharry.com/tutorial/css-borders/
+3.Margin 
+    https://www.codewithharry.com/tutorial/css-margin/
+
+
+Margin Collapse - 
+    Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+    This does not happen on left and right margins! Only top and bottom margins.

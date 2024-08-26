@@ -1,0 +1,40 @@
+it's always pass by value, but for objects the value of the variable is a reference. Because of this, when you pass an object
+and change its members, those changes persist outside of the function. This makes it look like pass by reference. 
+But if you actually change the value of the object variable you will see that the change does not persist, proving it's really 
+pass by value.
+
+Example:
+
+function changeObject(x) {
+  x = { member: "bar" };
+  console.log("in changeObject: " + x.member);
+}
+
+function changeMember(x) {
+  x.member = "bar";
+  console.log("in changeMember: " + x.member);
+}
+
+var x = { member: "foo" };
+
+console.log("before changeObject: " + x.member);
+changeObject(x);
+console.log("after changeObject: " + x.member); /* change did not persist */
+
+console.log("before changeMember: " + x.member);
+changeMember(x);
+console.log("after changeMember: " + x.member); /* change persists */
+
+
+output :-
+
+before changeObject: foo
+in changeObject: bar
+after changeObject: foo
+
+before changeMember: foo
+in changeMember: bar
+after changeMember: bar
+
+
+Note:- JS is a call by value language..

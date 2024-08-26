@@ -1,0 +1,10 @@
+link -https://stackoverflow.com/questions/21064101/understanding-offsetwidth-clientwidth-scrollwidth-and-height-respectively
+offsetWidth
+
+https://www.w3schools.com/jsref/prop_element_scrollleft.asp
+scrollLeft
+
+draggable
+
+The matches() method returns true if an element matches a specific CSS selector(s).
+The matches() method returns false if not.

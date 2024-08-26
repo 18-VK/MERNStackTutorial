@@ -1,0 +1,16 @@
+CSS Overflow
+    Sometimes the content shown is too large to be visible in a single line or division of the website. 
+    So, to avoid loss of that information we can use overflow property
+
+The overflow property has the following values:
+
+> visible - Default. The overflow is not clipped. The content renders outside the element's box
+> hidden - The overflow is clipped, and the rest of the content will be invisible
+> scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content
+> auto - Similar to scroll, but it adds scrollbars only when necessary
+
+overflow-x and overflow-y
+--------------------------
+The overflow-x and overflow-y properties specifies whether to change the overflow of content just horizontally or vertically (or both):
+overflow-x specifies what to do with the left/right edges of the content.
+overflow-y specifies what to do with the top/bottom edges of the content.

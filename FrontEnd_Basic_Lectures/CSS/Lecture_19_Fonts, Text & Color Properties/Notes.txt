@@ -1,0 +1,3 @@
+fonts - https://www.codewithharry.com/tutorial/css-fonts/
+colors - https://www.codewithharry.com/tutorial/css-colors/
+Text-styling - https://www.codewithharry.com/tutorial/css-text-styling/

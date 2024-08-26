@@ -1,0 +1,1350 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow", sans-serif;
+    --header: #3e54a3;
+    box-sizing: border-box;
+}
+
+.header {
+    min-width: 100vw;
+}
+
+.upperOfNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: white;
+    min-height: clamp(2em, 12vh, 3em);
+}
+
+.job__icon {
+    display: flex;
+    gap: 0.5rem;
+    max-height: 2em;
+    text-align: center;
+}
+
+.upperOfNav a {
+    color: white;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    align-items: center;
+    gap: 1em;
+    min-height: 3em;
+    padding: 1em 3.5em;
+}
+
+/*nav bar for mobile */
+.nav-menu {
+    display: none;
+}
+
+.nav-menu> :nth-child(1) {
+    min-height: 3em;
+    padding: 1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1px solid rgb(215, 213, 213);
+}
+
+.hamburger-button {
+    border: none;
+    width: 2.25em;
+    height: 2.25em;
+}
+
+.hamburger-menu {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+    position: relative;
+    justify-content: space-around;
+}
+
+.hamburger-menu .bar {
+    background-color: black;
+    height: 12%;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+}
+
+.dropdown-menu {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+.dropdown-menu-option {
+    display: flex;
+    width: 90%;
+    gap: 1.5em;
+    height: 2.5em;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 0.1px solid rgb(215, 213, 213);
+    position: relative;
+}
+
+.dropdown-menu.active {
+    opacity: 1;
+    height: auto;
+    min-height: 50vh;
+    visibility: visible;
+    z-index: 999;
+}
+
+.dropdown-menu-option>div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.dropdown-menu-option>div>a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.dropdown-menu-option i {
+    font-size: 1.25em;
+    height: 100%;
+}
+
+.Sign-in,
+.Sign-in div>a {
+    color: #f04257;
+}
+
+.StarTrail_link {
+    background-color: #3e54a3;
+    max-width: 90%;
+    height: 2.5em;
+}
+
+.StarTrail_link a {
+    font-size: 1em;
+}
+
+.NameWithLogo {
+    text-align: start;
+}
+
+.main_Menu {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 0.80em;
+    font-style: italic;
+    align-items: center;
+    min-height: 100%;
+}
+
+.main_Menu a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #f04257;
+    bottom: -5px;
+    left: 50%;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* on hover effect */
+
+.StarTrail_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header);
+    max-height: 100%;
+    max-width: 70%;
+    border-radius: 50px;
+    transition: filter 0.4s ease;
+}
+
+.StarTrail_link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.Link_StartHiring:hover,
+.StarTrail_link:hover {
+    filter: brightness(80%);
+}
+
+.section_homePage1 {
+    display: flex;
+    margin: 5% 0 5% 5%;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+
+.section_homePage1_data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.80em;
+    max-width: 48%;
+    font-size: clamp(1em, 1.45em, 3.5vh);
+    padding: 2% 2% 5% 5%;
+    ;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.section_homePage1_data h1 {
+
+    font-size: clamp(1.5em, 2.5em, 7vh);
+    color: var(--header);
+    font-weight: 600;
+}
+
+.section_homePage1_data>p {
+    max-width: 80%;
+    color: rgb(132, 130, 130);
+}
+
+.section_homePage1_Img {
+    position: relative;
+    max-width: 52%;
+    max-height: 680px;
+    overflow: hidden;
+}
+
+.section_homePage1_Img img {
+
+    max-height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+.Link_StartHiring {
+    background-color: #f04257;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    min-height: 2.5em;
+    max-width: 52%;
+    font-style: italic;
+    font-size: 0.70em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.20em;
+    box-sizing: border-box;
+    transition: filter 0.4s ease;
+}
+
+.option_with_Circle {
+    display: flex;
+    font-size: 0.75em;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 2em;
+    position: relative;
+}
+
+.option_with_Circle_data img {
+    max-height: 100%;
+}
+
+.option_with_Circle_data {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    max-height: 100%;
+}
+
+.section_Quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#Img_quote {
+    max-height: 50px;
+}
+
+.section_Quote p {
+    font-size: clamp(1em, 1.25em, 2vw)
+}
+
+#Img_kieran {
+    max-height: 75px;
+    object-fit: contain;
+    border-radius: 50px;
+}
+
+#data_kieran> :first-child {
+    color: var(--header);
+    font-weight: 600;
+}
+
+#data_kieran> :last-child {
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+}
+
+.section_third {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 5% 8%;
+}
+
+.section_third img {
+    max-width: 40%;
+}
+
+.section_third aside {
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.section_third aside div {
+    background-color: rgb(225, 241, 244);
+    /* max-width: min-content; set parent height according to child content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 1500px;
+}
+
+/* :: before and :before are same */
+.fa-regular {
+    font-size: 3em;
+    color: rgb(174, 172, 172);
+}
+
+.section_third aside h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.section_third aside p {
+    font-size: 1.25em;
+    color: rgb(132, 130, 130);
+}
+
+.Icon__human,
+.Icon__search,
+.Icon__Watch,
+.Icon__money {
+    font-size: 2.5em;
+    font-style: normal;
+}
+
+.section_preview-profile {
+    background-color: #3e54a3;
+    height: 110vh;
+    position: relative;
+}
+
+.profile_data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    height: 50%;
+    max-width: 50%;
+    margin: 0 auto;
+    color: white;
+}
+
+.profile_data h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.profile_data p {
+    text-align: center;
+    font-size: clamp(1em, 1.45em, 2vw);
+}
+
+.preview-profile-frame {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.inner-frame {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    height: 75vh;
+    border: 0.1px solid rgb(215, 213, 213);
+    background-image: url('Source/Images/home-talent-preview-frame.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    border-top: none;
+}
+
+.profile-img-container {
+    top: 25px;
+    width: 75vw;
+    height: calc(75vh - 30px);
+    overflow: hidden;
+    position: relative;
+    overflow-y: auto;
+}
+
+/* hide scollbar */
+.profile-img-container::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.preview-profile-frame-template-img {
+    position: absolute;
+    width: 74vw;
+    padding: 25px 5px 0px 5px;
+    z-index: 99;
+}
+
+/*  added additional space to fix flow of elements after positioned element */
+.Buffer_space {
+    position: relative;
+    margin-top: 20vh;
+    height: 20px;
+}
+
+.section_price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    margin: 1em 0em;
+}
+
+.section_price h1 {
+    font-size: 2em;
+    font-size: 600;
+}
+
+.section_price_Div {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    width: 55%;
+    height: 2em;
+    justify-content: center;
+}
+
+.section_price_Div div {
+    display: flex;
+    width: 10em;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_price_Div-Save {
+    color: white;
+    background-color: var(--header);
+    border-radius: 5px;
+    width: 80%;
+}
+
+.switch {
+    width: 60px;
+    height: 35px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.pricing-list-payment-option {
+    position: relative;
+    max-width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 5em 0 5em 0;
+}
+
+.pricing-in-dollar {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 1em;
+}
+
+.pricing-in-dollar-row-one-flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+}
+
+.pricing-in-dollar-row-one-flex div:first-child {
+    color: rgb(77, 77, 77);
+    font-weight: bold;
+}
+
+.pricing-in-dollar-row-one-flex :nth-child(2) {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.benifits-list {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    height: 50vh;
+    font-size: 1em;
+    align-items: center;
+}
+
+.benifits-list-main {
+    display: flex;
+    /* text-align: start; */
+    justify-content: start;
+    gap: 0.25em;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.benifits-list-other {
+    text-align: center;
+}
+
+.fa-circle-check {
+    color: #3e54a3;
+}
+
+.benifits-list>i {
+    text-align: center;
+    width: 100%;
+}
+
+.grid-bold-item {
+    font-weight: 700;
+    color: black;
+}
+
+.start-trail-categories {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    height: 2.5em;
+    justify-items: center;
+}
+
+.start-trail-categories-link {
+    background-color: #f04257;
+    min-width: 95%;
+}
+
+.instructions-with-payment-option {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.instructions {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.instructions div {
+    display: flex;
+    height: 2em;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 500;
+}
+
+.payment-option {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    background-color: rgb(240, 244, 244);
+    border-radius: 15px;
+}
+
+.section-hire-guide {
+    display: flex;
+    width: 95%;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 5em;
+    background-color: rgb(240, 244, 244);
+}
+
+.section-hire-guide-right-side {
+    position: relative;
+    width: 50%;
+}
+
+.section-hire-guide-left-side {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+/* For object-fit to work, the image itself needs a width and height. In the OP's CSS, the images do not have width and/or height set, thus object-fit cannot work. */
+.section-hire-guide-right-side img {
+    width: 100%;
+    /* image box size as % of container, see step 1 */
+    height: 100%;
+    /* image box size as % of container, see step 1 */
+    object-fit: contain;
+    /* matching of image pixels to image box, see step 2 */
+}
+
+.section-hire-guide-left-side-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    position: relative;
+    box-sizing: border-box;
+    padding: 2.5em 4.75em 2.5em 6.5em;
+    height: 100%;
+}
+
+.section-hire-guide-left-side-content>h1 {
+    font-size: 2.75em;
+    font-weight: 500;
+}
+
+.section-hire-guide-left-side-content>p {
+    font-size: 1.25em;
+}
+
+.book-a-call-with-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    border-radius: 10px;
+    background-color: white;
+    padding: 2em;
+}
+
+.book-a-call-with-details h2 {
+    font-size: 2em;
+}
+
+.book-a-call-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-a-call {
+    min-width: 9em;
+    max-height: 2.5em;
+    font-size: 1.25em;
+    background-color: #f04257;
+}
+
+.FAQs {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 45%;
+    margin: 0 auto;
+    padding: 5em 0em;
+}
+
+.FAQs>h1 {
+    text-align: center;
+}
+
+.FAQs h1 {
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+.FAQs h2 {
+    color: #3e54a3;
+    font-weight: 500;
+}
+
+.FAQs-Ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.FAQs-Ul>li {
+    list-style: none;
+}
+
+.FAQs-li {
+    display: flex;
+    padding: 0.5em;
+    height: 3em;
+    box-sizing: border-box;
+    border: 0.1px solid rgb(215, 213, 213);
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: clamp(1em, 1.45em, 2vw);
+    cursor: pointer;
+    padding: 1em;
+
+}
+
+/* this active class should add after click; */
+.FAQs-li.active {
+
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+.fa-thin {
+    font-weight: 400;
+    font-style: normal;
+    size: 2em;
+}
+
+
+.FAQs-Ul p,
+.FAQs-li+div {
+    border: 0.1px solid rgb(215, 213, 213);
+    border-top: none;
+    color: rgb(88, 88, 88);
+    padding: 0.8em;
+    border-radius: 10px;
+    display: none;
+}
+
+/* this active class should add on click event  */
+.FAQs-Ul p.active,
+.FAQs-li+div.active {
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    display: block;
+}
+
+.FAQs-li+div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    display: none;
+}
+
+.FAQs-li+div ul {
+    padding-left: 1.5em;
+    list-style: disc;
+}
+
+.FAQs-Ul p a {
+    color: rgb(88, 88, 88);
+}
+
+.still-got-questions {
+    max-width: 75%;
+    margin: 0 auto;
+    position: relative;
+    padding: 5em 0em;
+}
+
+.questions-div {
+    background-color: #3e54a3;
+    border-radius: 10px;
+    margin-bottom: 5em;
+    color: white;
+    background-image: url('Source/Images/download.svg'), url('Source/Images/download_2.svg'), url('Source/Images/download_3.svg');
+    background-repeat: no-repeat;
+    background-position: 0% 50%, 80% -25%, bottom right;
+}
+
+.questions-div-content {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 5em 0em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    text-align: center;
+}
+
+.questions-div-content h2 {
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+.questions-div-content a {
+    color: white;
+}
+
+.start-a-trail-questions-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 2em;
+    font-size: clamp(1em, 1.45em, 2vw);
+}
+
+.start-a-trail-questions-div h1 {
+    font-size: 2.5em;
+    font-weight: 500;
+    color: #3e54a3;
+}
+
+.start-a-trail-questions-div .StarTrail_link {
+    /* max-width: 5em; */
+    min-height: 2.5em;
+    box-sizing: border-box;
+    background-color: #f04257;
+}
+
+.start-a-trail-questions-div .StarTrail_link a {
+    padding: 0.5em 2em;
+    font-weight: 700;
+    font-size: 0.8em;
+}
+
+.top-of-footer,
+.bottom-of-footer {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.top-of-footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding: 5em 0em;
+}
+
+.top-of-footer-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.top-of-footer-content ul a,
+.bottom-of-footer ul a {
+    color: rgb(88, 88, 88);
+    text-decoration: none;
+}
+
+.top-of-footer-content ul a:hover,
+.bottom-of-footer ul a:hover {
+    text-decoration: underline;
+}
+
+.ttf-content-flexlist {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.brand {
+    width: 100%;
+}
+
+.brand ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.footer-partition {
+    border-top: 1px solid rgb(215, 213, 213);
+    height: 1px;
+}
+
+.bottom-of-footer {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(88, 88, 88);
+
+}
+
+.bottom-of-footer h3 {
+    font-weight: 400;
+}
+
+.bottom-of-footer ul {
+    display: flex;
+    gap: 2em;
+
+    list-style: none;
+    width: 30%;
+}
+
+/* for mobile */
+@media only screen and (max-width: 480px){
+    .upperOfNav {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main_Menu,
+    .StarTrail_link {
+        /* use important to give priority */
+        display: none;
+    }
+
+    /* https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property */
+    nav {
+        display: none;
+    }
+
+    .nav-menu {
+        display: block;
+        /* position: fixed;
+        z-index: 999; */
+        width: 100vw;
+    }
+
+    .dropdown-menu {
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        min-height: 0;
+        height: 0;
+        position: fixed;
+        z-index: -999;
+        width: 100vw;
+        background-color: white;
+    }
+
+    .section_homePage1 {
+        /* flex-direction: column; */
+        display: block;
+        margin: 10% 5%;
+        text-align: center;
+    }
+
+    .section_homePage1_data {
+        gap: 1em;
+        margin: 5% 0;
+    }
+
+    .section_homePage1_data,
+    .section_homePage1_Img {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .section_homePage1_data>p {
+        max-width: 100%;
+    }
+
+    .Link_StartHiring {
+        min-width: 80%;
+        margin: 0 auto;
+    }
+
+    .option_with_Circle {
+        flex-direction: column;
+        min-height: 75px;
+    }
+
+    .section_homePage1_Img img {
+        max-width: 100%;
+    }
+
+    .section_third {
+        flex-direction: column;
+        gap: 1.5em;
+        margin-bottom: 2em;
+    }
+
+    .section_third aside,
+    .section_third img {
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2em 0;
+    }
+
+    .section-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .section_preview-profile {
+        max-height: 85vh;
+    }
+
+    .profile_data {
+        height: 80%;
+        max-width: 70%;
+        box-sizing: border-box;
+    }
+
+    .inner-frame {
+        height: 35vh;
+        border-radius: 5px;
+        width: 85%;
+    }
+
+    .profile-img-container {
+        height: calc(35vh - 30px);
+        width: 100%;
+    }
+    .preview-profile-frame-template-img{
+        width: 100%;
+    }
+    .profile-img-container img {
+        padding-top: 0;
+    }
+
+    .pricing-list-payment-option {          
+        max-width: 90%;
+        padding: 0;
+    }
+
+    .section_price_Div {
+        width: 100%;
+        font-size: 0.8em;
+        text-align: center;
+        height: 3em;
+    }
+
+    .pricing-in-dollar {
+        gap: 0.5em;
+    }
+
+    .pricing-in-dollar-row-one-flex {
+        font-size: 0.8em;
+    }
+
+    .pricing-in-dollar-row-one-flex :nth-child(2) {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .instructions {
+        flex-direction: column;
+    }
+
+    .section-hire-guide {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .section-hire-guide-left-side,
+    .section-hire-guide-right-side {
+        width: 100%;
+    }
+
+    .section-hire-guide-left-side-content {
+        padding: 1em;
+        width: 100%;
+    }
+    .book-a-call-button 
+    {
+        flex-direction: column;
+        gap: 1.5em;
+        align-items: start;
+    }
+    .book-a-call
+    {
+        min-width: 75%;
+        max-height: 2em;
+    }
+    .FAQs {
+        width: 90%;
+    }
+
+    .still-got-questions,
+    .questions-div-content,
+    .top-of-footer {
+        max-width: 90%;
+    }
+
+    .questions-div {
+        background-image: none;
+    }
+
+    .link_active {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-of-footer-content {
+        padding: 0;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: none;
+    }
+
+    .ttf-content-flexlist {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ttf-content-flexlist Ul {
+        width: 80%;
+        align-items: center;
+    }
+
+    .bottom-of-footer {
+        flex-direction: column;
+    }
+
+    .bottom-of-footer ul {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+/* for tablet */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    /* use important to give priority */
+    nav {
+        grid-template-columns: 30% 40% 30%;
+        padding: 1em 2em
+    }
+    nav .StarTrail_link
+    {
+        max-width: 80%;
+    }
+    .Link_StartHiring {
+        min-width: 80%;
+    }
+    .section_homePage1_data
+    {
+        padding: 0;
+    }
+    .section_homePage1_data>p 
+    {
+        max-width: 100%;
+    }
+    .option_with_Circle
+    {
+        gap: 1em;
+        flex-wrap: wrap;
+    }
+    .section_third
+    {
+        padding: 5% 2%;
+    }
+    .section_third aside {
+        min-width: 50%;
+    }
+    .section_third img {
+        min-width: 45%;
+    }
+    .section_third aside h1 {
+        font-size: 2em;
+    }
+    .section-hire-guide-left-side-content
+    {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .pricing-list-payment-option {          
+        max-width: 90%;
+        padding: 2em 0;
+    }
+    .section_price_Div {
+        width: 100%;
+        font-size: 0.8em;
+        text-align: center;
+        height: 3em;
+    }
+    .section_preview-profile
+    {
+        height: 70vh;
+    }
+    .profile_data {
+        max-width: 70%;
+        box-sizing: border-box;
+    }
+
+    .inner-frame {
+        border-radius: 10px;
+    }
+    .profile-img-container img {
+        padding-top: 0;
+    }
+    .Buffer_space {
+        margin-top: 40vh;
+    }
+    .section-hire-guide
+    {
+        padding: 0;
+        height: auto;
+    }
+    .section-hire-guide-left-side-content h1 
+    {
+        font-size: 2em;
+    }
+    .section-hire-guide-left-side-content
+    {
+        /* padding: 2.5em 4.75em 2.5em 6.5em; */
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .book-a-call-with-details
+    {
+        padding: 0 0.5em;
+    }
+    .FAQs
+    {
+        width: 70%;
+    }
+    .top-of-footer
+    {
+        max-width: 95%;
+    }
+    .top-of-footer-content {
+        grid-template-columns: 30% 25% 25% 20%;
+    }
+}
+
+/* for potrait tab and small size laptop */
+@media only screen and (min-width: 769px) and (max-width: 1024px)  {
+    
+    nav {
+        grid-template-columns: 45% 30% 25%;
+    }
+    nav .StarTrail_link
+    {
+        max-width: 100%;
+    }
+    .Link_StartHiring {
+        min-width: 80%;
+    }
+    .option_with_Circle
+    {
+        gap: 1em;
+        flex-wrap: wrap;
+    }
+    .Link_StartHiring {
+        min-width: 80%;
+    }
+    .section_homePage1_data
+    {
+        padding: 0;
+    }
+    .section_homePage1_data>p 
+    {
+        max-width: 100%;
+    }
+    .section_third
+    {
+        padding: 5%;
+    }
+    .section_third aside {
+        min-width: 50%;
+    }
+    .section_third img {
+        min-width: 45%;
+    }
+    .section-hire-guide-left-side-content
+    {
+        /* padding: 2.5em 4.75em 2.5em 6.5em; */
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .pricing-list-payment-option
+    {
+        max-width: 80%;
+    }
+    .start-a-trail-questions-div .StarTrail_link{
+        max-width: 30%;
+    }
+    .FAQs
+    {
+        width: 60%;
+    }
+    .section_preview-profile
+    {
+        height: 70vh;
+    }
+    .profile_data {
+        max-width: 70%;
+        box-sizing: border-box;
+    }
+
+    .inner-frame {
+        border-radius: 10px;
+    }
+
+    .profile-img-container img {
+        padding-top: 0;
+    }
+    .Buffer_space {
+        margin-top: 40vh;
+    }s
+    .top-of-footer
+    {
+        max-width: 95%;
+    }
+    .top-of-footer-content {
+        grid-template-columns: 30% 25% 25% 20%;
+    }
+}

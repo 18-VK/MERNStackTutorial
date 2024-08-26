@@ -1,0 +1,111 @@
+
+link - https://www.w3schools.com/js/js_htmldom_document.asp
+Print Element
+---------------
+> console dir function
+    shows the element as an object with its.
+> console log 
+    shows the element DOM tree
+
+properties
+------------
+> tagNamea and node Name
+    Used to read tag name of an element
+    TagName - only works for Element nodes.
+    Node Name - defined for any node (text, comment etc)
+> Inner HTML and outer HTML
+    The innerHTML property allows to get the HTML inside the element as a string.
+    Note : valid for element modes only
+
+    The outer HTML property contains the full HTML
+    innerHTML + the element itself.
+
+" Inner HTML is valid only for element nodes for other
+node types we can use nodevalue or data."
+
+text Content
+--------------
+The textContent property sets or returns the text content of the specified node, and all its descendants.
+
+The hidden property
+--------------------
+The 'hidden' attribute and the DOM property specifics
+whether the element is visible or not.
+
+
+                Attribute Metod
+----------------------------------------------------------------------
+hasAttribute
+--------------
+The hasAttribute() method returns true if the attribute exists, otherwise false.
+
+getAttribute
+--------------
+Method used to get the value of an attribute.
+
+setAttribute
+-------------
+Method used to set the value of an attribute.
+
+removeAttribute
+----------------
+method used to remove the attribute from element
+
+Attributes
+--------------
+method to get the colection of all Attributes
+
+createAttribute()
+-----------------
+The createAttribute() method creates an attribute and returns the attribute as an Attr object.
+
+Extra : 
+
+Data- attribute
+----------------
+HTML is designed with extensibility in mind for data that should be associated with a particular
+element but need not have any defined meaning. data-* attributes allow us to store extra information
+
+dataset
+-------
+The dataset read-only property of the HTMLElement interface provides read/write access to custom data attributes (data-*) on elements. It exposes 
+a map of strings (DOMStringMap) with an entry for each data-* attribute.
+
+
+// Insert and delete node/element
+
+Method	Description
+document.createElement(element)-	Create an HTML element
+document.removeChild(element)  -    Remove an HTML element
+document.appendChild(element)  -    Add an HTML element
+document.replaceChild(new, old)-	Replace an HTML element
+
+insertBefore() 
+---------------
+The insertBefore() method of the Node interface inserts a node before a reference 
+node as a child of a specified parent node.
+syntax - insertBefore(newNode, referenceNode)
+
+Note:- check js_chapterwise_notes.pdf
+
+InsertadjacentHTML/text/element
+--------------------------------
+The insertAdjacentHTML() method of the Element interface parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position.
+
+syntax - insertAdjacentHTML(position, text)
+positions :
+A string representing the position relative to the element. Must be one of the following strings:
+
+"beforebegin"
+Before the element. Only valid if the element is in the DOM tree and has a parent element.
+
+"afterbegin"
+Just inside the element, before its first child.
+
+"beforeend"
+Just inside the element, after its last child.
+
+"afterend"
+After the element. Only valid if the element is in the DOM tree and has a parent element.
+
+https://w3schools.com/jsref/met_node_insertadjacenthtml.asp

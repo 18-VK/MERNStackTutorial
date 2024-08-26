@@ -1,0 +1,30 @@
+
+Link - https://medium.com/globant/exploring-node-js-modules-commonjs-vs-es6-modules-2766e838bea9
+
+What is a Module?
+-----------------
+A module is a self-contained unit of code that encapsulates related functionality. This allows developers to 
+organize their code into logical,reusable components. Such components can be easily imported and used in other
+parts of their project.
+
+Node.js supports two module systems for organizing and sharing code. These are
+
+> CommonJS modules
+> ECMAScript modules
+CommonJS modules have been the traditional method for handling dependencies in Node.js, whereas ECMAScript
+modules are a newer addition and follow the standard format used in modern browsers.
+
+CommonJS Modules
+----------------
+The CommonJS module format specifies a way to define a module using a require()function to load modules and 
+module.exports or exports object to expose functionality. 
+
+Different ways to configure CommonJS modules
+-----------------------------------------------
+Following are the ways to configure CommonJS modules in your project:
+
+> Files with a .js extension when the nearest parent package.json file contains a top-level 
+field "type" with a value of "commonjs" 
+
+Note : no need to add 'type' also because my default value is type : 'commonjs'
+

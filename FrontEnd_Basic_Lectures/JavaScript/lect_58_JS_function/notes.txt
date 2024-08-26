@@ -1,0 +1,80 @@
+Function Declaration
+-------------------------
+
+A function declaration (also known as a function statement) is simply defining a function with a function name right after the function keyword.
+One major feature of the function declaration is that it can be called and used even before creating them. 
+This is possible because of Hoisting.
+
+“JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, or
+ classes to the top of their scope, prior to execution of the code”
+
+syntax:-
+
+    function functionDeclaration(para1, para2) {
+        // statement
+    };
+
+Function expression
+-----------------------
+A function expression is simply a function that is declared without a function name and is assigned to a variable at the same time.
+ The absence of a function name makes it an anonymous function.
+
+Unlike function declaration, you can’t call a function expression before creating it, it will throw an error. 
+So we can only call a function expression only after we have created it.
+
+Function expressions assigned to a variable are called/invoked using the variable name since the function expression does not have a function name.
+
+Advantage of function expression
+----------------------------------
+1. Callback
+
+These are functions that are passed into another function as an argument.
+Function expressions can be used as callback functions. That is to say, we can pass them directly to other functions without 
+having to assign them to a variable.
+
+e.g 
+button.addEventListener('click', function() {
+  
+    console.log('Function expression is used here') // definition of function expression
+}
+
+2. Immediately Invoked function Expression(IIFE):
+
+A function expression can be used as an Immediately Invoked Function Expression. IIFEs are functions that are executed immediately 
+after being defined.
+A function expression can be written as an IIFE by enclosing it in parentheses, and adding another parenthesis immediately 
+at the end of the function:
+
+e.g 
+
+(function() {   
+  
+  // statement
+  
+})()
+
+
+Arrow function
+---------------
+
+Arrow functions are introduced in ES6, which provides you a more accurate way to write the functions in JavaScript. 
+They allow us to write smaller function syntax. Arrow functions make your code more readable and structured.
+
+Arrow functions are anonymous functions (the functions without a name and not bound with an identifier). They don't return any value 
+and can declare without the function keyword. Arrow functions cannot be used as the constructors.
+
+link - https://mayanovarini.medium.com/functions-in-javascript-declaration-expression-arrow-d6f907dc850a#:~:text=There%20is%20also%20%E2%80%9CArrow%20Function,in%20the%20main%20code%20flow.&text=Function%20Expressions%20are%20created%20inside,such%20as%20a%20variable%20declaration.
+
+
+Extra -
+
+What is the difference between asynchronous and synchronous workloads?
+While asynchronous operations can run multiple tasks concurrently on a single thread, 
+synchronous programs have a task queue where every other task remains idle while the first is completed.
+
+
+Callback function need?
+------------------------
+One place you need to use a callback is anywhere the language doesn't give you coordination. Coordination means code doesn't 
+execute until the data it needs is ready. Synchronous calls are coordinated; the call doesn't return until the sub-computation 
+is finished.Asynchronous calls don't give you coordination, so you need a callback.

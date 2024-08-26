@@ -1,0 +1,18 @@
+Entities - https://www.codewithharry.com/tutorial/html-entities/
+Code tags - https://www.codewithharry.com/tutorial/html-code-tags/
+
+
+prev Tag - The <pre> tag defines preformatted text. Text in a <pre> element is displayed in a fixed-width font, 
+           and the text preserves both spaces and line breaks. The text will be displayed exactly as written in the HTML source code.
+
+quotation tags-
+    What Are <blockquote> and <q> Tags?
+    The <blockquote> and <q> tags serve to define quotations in HTML. While <blockquote> is used for longer,
+    block-level quotes, <q> is used for shorter, inline quotes.
+
+Code tag
+    The <code> tag is a semantic HTML tag that's used for displaying code snippets. 
+    It can be used both inline and within a block-level element like <pre>.
+
+Canvas -
+https://www.codewithharry.com/tutorial/html-canvas/

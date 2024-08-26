@@ -1,0 +1,29 @@
+Http module
+-----------
+Link - https://mirzaleka.medium.com/a-detailed-look-into-the-node-js-http-module-680eb5e4548a
+Note : - must checkout this link to get detailed understanding 
+
+The http module in Node.js is used to create HTTP servers and clients. It provides functionalities for making HTTP 
+requests and handling HTTP responses.
+
+Creating an HTTP Server
+-----------------------
+To create an HTTP server, you need to require the http module and use the createServer method.
+
+Key Methods and Properties
+---------------------------
+> http.createServer([options][, requestListener]): Creates a new HTTP server instance.
+> server.listen(port[, hostname][, backlog][, callback]): Starts the HTTP server listening for connections.
+> req.on('data', callback): Adds a listener for the 'data' event. This event is emitted when a chunk of data is available.
+> res.writeHead(statusCode[, statusMessage][, headers]): Sends a response header to the request.
+> res.end([data][, encoding][, callback]): Signals that the response is complete.
+
+Conclusion
+----------
+The http module is a fundamental part of Node.js, enabling you to create servers and clients to handle HTTP requests and
+responses. It's essential for building web applications and APIs in Node.js. For more advanced features and a higher level
+of abstraction, you might consider using frameworks like Express.js built on top of the http module.
+
+Note : Http module's server class has event emitters functionality
+
+There is more thing to do.. but for building APIs we'll use ExpressJs that's why we are not gonna deep down more into it.

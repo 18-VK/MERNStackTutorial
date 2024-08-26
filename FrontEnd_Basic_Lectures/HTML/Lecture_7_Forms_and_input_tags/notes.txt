@@ -1,0 +1,108 @@
+HTML form - An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+
+The Action Attribute
+    The action attribute defines the action to be performed when the form is submitted.
+    Usually, the form data is sent to a file on the server when the user clicks on the submit button.
+
+    In the example below, the form data is sent to a file called "action_page.php". This file contains a server-side script that handles the form data:
+    Example
+        On submit, send form data to "action_page.php":
+
+        <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+        </form>
+
+The <form> element is a container for different types of input elements, such as: text fields, checkboxes, radio buttons, 
+submit buttons, etc.
+
+The Submit Button
+------------------
+The <input type="submit"> defines a button for submitting the form data to a form-handler.
+The form-handler is typically a file on the server with a script for processing input data.
+The form-handler is specified in the form's action attribute.
+
+The <fieldset> and <legend> Elements
+-------------------------------------
+The <fieldset> element is used to group related data in a form.
+The <legend> element defines a caption for the <fieldset> element.
+
+The Name Attribute for <input>
+-------------------------------
+"Notice that each input field must have a name attribute to be submitted."
+If the name attribute is omitted, the value of the input field will not be sent at all.
+check this out - https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit_id
+
+The Target Attribute
+----------------------
+The target attribute specifies where to display the response that is received after submitting the form.
+The target attribute can have one of the following values:
+
+Value	Description
+_blank	The response is displayed in a new window or tab
+_self	The response is displayed in the current window
+_parent	The response is displayed in the parent frame
+_top	The response is displayed in the full body of the window
+framename	The response is displayed in a named iframe
+The default value is _self which means that the response will open in the current window.
+
+The Autocomplete Attribute
+--------------------------
+The autocomplete attribute specifies whether a form should have autocomplete on or off.
+When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+e.g - <form action="/action_page.php" autocomplete="on">
+
+The name attribute 
+--------------------
+: specifies the name of a form.
+The name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted.
+
+<form action="/action_page.php" method="get" name="myForm">
+   <!-- Data-->
+</form>
+The Novalidate Attribute
+--------------------------
+The novalidate attribute is a boolean attribute.
+When present, it specifies that the form-data (input) should not be validated when submitted.
+
+<form action="/action_page.php" novalidate>
+
+The Method Attribute
+----------------------
+The method attribute specifies the HTTP method to be used when submitting the form data.
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+The default HTTP method when submitting form data is GET.
+
+Notes on GET:
+
+> Appends the form data to the URL, in name/value pairs
+> NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+> The length of a URL is limited (2048 characters)
+> Useful for form submissions where a user wants to bookmark the result
+> GET is good for non-secure data, like query strings in Google
+
+Notes on POST:
+
+> Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+> POST has no size limitations, and can be used to send large amounts of data.
+> Form submissions with POST cannot be bookmarked
+
+Tip: Always use POST if the form data contains sensitive or personal information!
+
+learn about it more from https://www.w3schools.com/html/html_forms_attributes.asp
+HTML from element- https://www.w3schools.com/html/html_form_elements.asp
+
+<br> tag
+--------
+The <br> tag inserts a single line break.
+The <br> tag is useful for writing addresses or poems.
+The <br> tag is an empty tag which means that it has no end tag.
+
+
+HTML Horizontal Rules
+-----------------------
+The <hr> tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.
+The <hr> element is used to separate content (or define a change) in an HTML page:

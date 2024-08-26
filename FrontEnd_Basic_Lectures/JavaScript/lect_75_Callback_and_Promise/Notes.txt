@@ -1,0 +1,197 @@
+JavaScript is an asynchronous language, which means that it can handle multiple tasks simultaneously. Callbacks are a fundamental 
+aspect of JavaScript, as they allow you to run code after an asynchronous operation has been completed.
+
+Callback function
+------------------
+you can also pass a function as an argument to a function. This function that is passed as an argument inside 
+of another function is called a callback function.
+
+Callbacks are used to handle the results of asynchronous operations in a non-blocking manner. Asynchronous operations are operations 
+that take a significant amount of time to complete, such as network requests, file I/O, and database queries. If these operations 
+were executed synchronously, the program would freeze and wait for the operation to complete before continuing. 
+This can lead to a poor user experience, as the program would appear unresponsive.
+
+e.g :-
+As you know, the setTimeout() method executes a block of code after the specified time.
+Here, the greet() function is called after 2000 milliseconds (2 seconds). During this wait, the sayName('John'); is executed. 
+That is why Hello John is printed before Hello world.
+The above code is executed asynchronously (the second function; sayName() does not wait for the first function; greet() to complete).
+
+Benefit of Callback Function
+-------------------------------
+The benefit of using a callback function is that you can wait for the result of a previous function call and then execute another
+function call. In this example, we are going to use the setTimeout() method to mimic the program that takes time to execute, 
+such as data coming from the server.
+
+Non-blocking: Callbacks allow for non-blocking programming, which means that the program does not stop and wait for an operation 
+to complete before continuing to execute. This is important for improving the performance and responsiveness of applications.
+
+Closure: A closure is a function that has access to variables in its outer scope, even after the outer function has returned. 
+This allows the callback function to access variables and information from the main function, even after the main function has 
+completed its execution.
+
+
+Promise
+--------
+Note - before creating Promise see the uses of it - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+
+A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+syntax - 
+createAudioFileAsync(audioSettings).then(successCallback, failureCallback);
+
+A Promise is in one of these states:
+
+> pending: initial state, neither fulfilled nor rejected.
+> fulfilled: meaning that the operation was completed successfully.
+> rejected: meaning that the operation failed.
+
+link - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+     - https://www.freecodecamp.org/news/javascript-promise-tutorial-how-to-resolve-or-reject-promises-in-js/
+why to use ?
+-------------
+Prior to promises events and callback functions were used but they had limited functionalities and created unmanageable code. 
+Multiple callback function  would create callback hell/ pyramid of doom that leads to unmanageable code. Promises are used to handle asynchronous 
+operations in JavaScript.
+
+Here's the magic: the then() function returns a new promise, different from the original:
+const promise = doSomething();
+const promise2 = promise.then(successCallback, failureCallback);
+
+This second promise (promise2) represents the completion not just of doSomething(), but also of the successCallback or 
+failureCallback you passed in — which can be other asynchronous functions returning a promise. When that's the case, any
+callbacks added to promise2 get queued behind the promise returned by either successCallback or failureCallback.
+
+If the previous handler started a promise but did not return it, there's no way to track its settlement anymore, 
+and the promise is said to be "floating".
+
+e.g 
+doSomething()
+  .then((url) => {
+    // Missing `return` keyword in front of fetch(url).
+    fetch(url);
+  })
+  .then((result) => {
+    // result is undefined, because nothing is returned from the previous
+    // handler. There's no way to know the return value of the fetch()
+    // call anymore, or whether it succeeded at all.
+  });
+
+By returning the result of the fetch call (which is a promise), we can both track its completion and receive its value when it 
+completes.
+
+doSomething()
+  .then((url) => {
+    // `return` keyword added
+    return fetch(url);
+  })
+  .then((result) => {
+    // result is a Response object
+  });
+
+JavaScript then() method
+-------------------------
+The then() method is used with the callback when the promise is successfully fulfilled or resolved.
+The syntax of then() method is:
+promiseObject.then(onFulfilled, onRejected);
+
+JavaScript catch() method
+--------------------------
+The catch() method is used with the callback when the promise is rejected or if an error occurs. 
+
+JavaScript finally() method
+----------------------------
+You can also use the finally() method with promises. The finally() method gets executed when the
+promise is either resolved successfully or rejected.
+
+Chained Promises
+-----------------
+The methods Promise.prototype.then(), Promise.prototype.catch(), and Promise.prototype.finally() are used to associate further action with a promise that becomes settled. As these methods return
+promises, they can be chained.
+
+The .then() method takes up to two arguments; the first argument is a callback function for the fulfilled case of the promise, 
+and the second argument is a callback function for the rejected case. Each .then() returns a newly generated promise object,
+which can optionally be used for chaining; for example:
+
+Note:- It's better to use chain of promises then chain of callbacks
+e.g :
+
+promise.then(result => {
+    let onePokemon = JSON.parse(result).results[0].url;
+    return onePokemon;
+}).then(onePokemonURL => {
+    console.log(onePokemonURL);
+}).catch(error => {
+    console.log('In the catch', error);
+});
+
+More Promise methods
+---------------------
+Link - https://dev.to/swarnaliroy94/methods-of-promise-all-any-finally-o2e
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+    - https://www.programiz.com/javascript/promise
+
+Promise.all() Method
+---------------------
+Waits for all promises to be resolved or any one to be rejected.
+The Promise.all() method accepts an iterable Object, such as an Array of promises as an input and returns a single promise that
+resolves to a result array of the input promises.
+When all input promises have been resolved or the iterable input does not contain a promise, the returned promise will be resolved.
+
+It rejects immediately when an input promise rejects or non-promise throws an error and will reject with that first rejection 
+message / error message.
+
+> Rejection of Promise.all() : Fail-Fast Behavior
+
+Promise.all() shows fail-fast behavior, that is, Promise.all() asynchronously rejects with the value of the promise that rejected, 
+if any of the passed-in elements are rejected.
+
+For example, if we pass in two promises that resolve after a timeout and one promise that rejects immediately, then Promise.all() 
+will reject immediately. It does not depend on if the other promises have resolved. The following example just does the same!
+
+    const pro1 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("one"), 1000);
+    });
+
+    const pro2 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("two"), 2000);
+    });
+
+    const pro3 = new Promise((resolve, reject) => {
+    setTimeout(() => reject("rejected"), 3000);
+    });
+
+    Promise.all([pro1, pro2, pro3])
+    .then((values) => {
+        console.log(values);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+    //expected output: rejected
+
+Promise.any() Method
+--------------------
+Returns the promise value as soon as any one of the promises is fulfilled
+Unlike Promise.all(), this method is used to return the first promise that fulfills.
+It is short-circuited right after a promise is completed, so as soon as a promise is fulfilled, it will not wait for other
+promises to complete.
+
+Rejection of Promise.any()
+Promise.any() rejects with an AggregateError if no promise fulfils
+The AggregateError object represents an error when several errors need to be wrapped in a single error.
+It is thrown when multiple errors need to be reported by an operation.
+
+Promise.allsettle() Method
+---------------------------
+Waits until all promises are either resolved or rejected.
+The Promise.allSettled() static method takes an iterable of promises as input and returns a single Promise. This returned promise
+fulfills when all of the input's promises settle (including when an empty iterable is passed), with an array of objects that describe 
+the outcome of each promise.
+
+Promise.race() Method
+---------------------------
+Wait until any of the promises is resolved or rejected
+The Promise.race() method returns a Promise that is resolved or rejected, as soon as one of the promises in an iterable, 
+such as an array, fulfills or rejects, with the value or reason from that Promise.
+The promise returned will be forever pending, if the iterable passed is empty.
